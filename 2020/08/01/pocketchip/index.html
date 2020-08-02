@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://chip.jfpossibilities.com/docs/images/chip_bottom_annotated.jpg">
 <meta property="og:image" content="http://chip.jfpossibilities.com/docs/images/chip_pinouts.jpg">
 <meta property="article:published_time" content="2020-08-01T11:40:52.000Z">
-<meta property="article:modified_time" content="2020-08-02T04:14:53.818Z">
+<meta property="article:modified_time" content="2020-08-02T04:20:26.262Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="pocketchip">
 <meta property="article:tag" content="linux">
@@ -195,7 +195,7 @@
 </li>
 <li><p>IIC接口</p>
 <ul>
-<li>在linux的/dev目录下可以看到有三个i2c设备，i2c-0，  i2c-1 ， i2c-2，其中i2c-0设备就是AXP209电源管理芯片，通过i2c-tools这个软件包，向这个设备中的寄存器写入相应数据可以控制这个电源管理芯片，比如默认情况下设定了整块板子的最大电流为900mA，超过就会断电，可以通过写入相关数据到寄存器实现关闭限流。实测关闭限制后，插入usb设备仍然会断电。参考：<a target="_blank" rel="noopener" href="http://www.chip-community.org/index.php/Power">http://www.chip-community.org/index.php/Power</a></li>
+<li>在linux的<code>/dev</code>目录下可以看到有三个i2c设备，<code>i2c-0</code>，<code>i2c-1</code> ， <code>i2c-2</code>，其中<code>i2c-0</code>设备就是AXP209电源管理芯片，通过<code>i2c-tools</code>这个软件包，向这个设备中的寄存器写入相应数据可以控制这个电源管理芯片，比如默认情况下设定了整块板子的最大电流为900mA，超过就会断电，可以通过写入相关数据到寄存器实现关闭限流。实测关闭限制后，插入usb设备仍然会断电。参考：<a target="_blank" rel="noopener" href="http://www.chip-community.org/index.php/Power">http://www.chip-community.org/index.php/Power</a></li>
 </ul>
 </li>
 <li><p>UART接口</p>
