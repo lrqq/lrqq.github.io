@@ -162,57 +162,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。"><a href="#有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。" class="headerlink" title="有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。"></a>有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。</h3><hr>
-<h4 id="为什么会乱码？"><a href="#为什么会乱码？" class="headerlink" title="为什么会乱码？"></a>为什么会乱码？</h4><p>我们知道，计算机内储存的东西本质上是二进制数据，由于使用二进制表示位数太多，比较麻烦，所以多采用十六进制进行表示。中文经过编码变成十六进制储存在计算机，经过解码变成我们可以理解的文字。<br>文本文件乱码，问题就出在编码和解码的方式不一致。比如使用utf8编码的文件，却以gb2312的方式来解码。  </p>
-<table>
-<thead>
-<tr>
-<th>文字</th>
-<th>UTF-8</th>
-<th>GB2312</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>大</td>
-<td>E5 A4 A7</td>
-<td>B4 F3</td>
-</tr>
-<tr>
-<td>一个文本文件，内容是<code>E5 A4 A7</code>,使用UTF-8的方式解码，可以得到一个<code>大</code>字，而用GB2312的方式解码，得到的是乱码。</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id="UTF-8和Unicode的关系"><a href="#UTF-8和Unicode的关系" class="headerlink" title="UTF-8和Unicode的关系"></a>UTF-8和Unicode的关系</h4><p>简单来说，Unicode的目标就是给世界上每一个符号都给一个独一无二的编码，而UTF-8则是为了解决这个编码如何存储在计算机中的问题。<br>UTF-8 是 Unicode 的实现方式之一。<br>UTF-8是一种多字节编码的字符集，表示一个Unicode字符时，它可以是1个至多个字节，在表示上有规律：</p>
-<table>
-<thead>
-<tr>
-<th>Unicode符号范围(十六进制)</th>
-<th>UTF-8编码方式（二进制）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0000 0000-0000 007F</td>
-<td>0xxxxxxx</td>
-</tr>
-<tr>
-<td>0000 0080-0000 07FF</td>
-<td>110xxxxx 10xxxxxx</td>
-</tr>
-<tr>
-<td>0000 0800-0000 FFFF</td>
-<td>1110xxxx 10xxxxxx 10xxxxxx</td>
-</tr>
-<tr>
-<td>0001 0000-0010 FFFF</td>
-<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
-</tr>
-</tbody></table>
-<h4 id="手动换算理解UTF-8和Unicode"><a href="#手动换算理解UTF-8和Unicode" class="headerlink" title="手动换算理解UTF-8和Unicode"></a>手动换算理解UTF-8和Unicode</h4><ul>
-<li>用<code>大</code>字举个例子，查到<code>大</code>字的Unicode码为<code>5927</code>,在<code>0000 0800-0000 FFFF</code>之间，因此，它的UTF8编码需要占用三个字节。</li>
-<li>把<code>5927</code>转化为二进制，得到<code>101 1001 0010 0111‬</code>,填入<code>1110xxxx 10xxxxxx 10xxxxxx</code>的<code>x</code>处，不足的用0补足，最终得到<code>11100101 10100100 10100111</code>,再转为十六进制，得到<code>E5 A4 A7</code>  </li>
-</ul>
-
+        <p> 有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。</p>
+        
       
 
       
