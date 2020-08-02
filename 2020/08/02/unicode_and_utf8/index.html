@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="lrqq.github.io">
-  <title>Tag: linux | hexo</title>
+  <title>UTF8和Unicode是什么关系 | hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hexo">
-<meta property="og:url" content="lrqq.github.io/tags/linux/index.html">
+  <meta name="description" content="有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。 为什么会乱码？我们知道，计算机内储存的东西本质上是二进制数据，由于使用二进制表示位数太多，比较麻烦，所以多采用十六进制进行表示。中文经过编码变成十六进制储存在计算机，经过解码变成我们可以理解的文字。文本文件乱码，问题就出在编码和解码的方式不一致。比如使用utf8编码的文件，却以gb2312的方式来解码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UTF8和Unicode是什么关系">
+<meta property="og:url" content="lrqq.github.io/2020/08/02/unicode_and_utf8/index.html">
 <meta property="og:site_name" content="hexo">
+<meta property="og:description" content="有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。 为什么会乱码？我们知道，计算机内储存的东西本质上是二进制数据，由于使用二进制表示位数太多，比较麻烦，所以多采用十六进制进行表示。中文经过编码变成十六进制储存在计算机，经过解码变成我们可以理解的文字。文本文件乱码，问题就出在编码和解码的方式不一致。比如使用utf8编码的文件，却以gb2312的方式来解码。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-02T09:47:13.000Z">
+<meta property="article:modified_time" content="2020-08-02T10:18:10.044Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="编码">
 <meta name="twitter:card" content="summary">
   
   
@@ -140,64 +145,221 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-unicode_and_utf8" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/01/pocketchip/" class="archive-article-date">
-  	<time datetime="2020-08-01T11:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/01/pocketchip/">pocketchip折腾记</a>
+    <h1 class="article-title" itemprop="name">
+      UTF8和Unicode是什么关系
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/08/02/unicode_and_utf8/" class="archive-article-date">
+  	<time datetime="2020-08-02T09:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。"><a href="#有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。" class="headerlink" title="有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。"></a>有时候我们会遇到文本文件乱码的问题，今天学习了一下文本文件的编码相关的知识，在这里记录一下。</h3><hr>
+<h4 id="为什么会乱码？"><a href="#为什么会乱码？" class="headerlink" title="为什么会乱码？"></a>为什么会乱码？</h4><p>我们知道，计算机内储存的东西本质上是二进制数据，由于使用二进制表示位数太多，比较麻烦，所以多采用十六进制进行表示。中文经过编码变成十六进制储存在计算机，经过解码变成我们可以理解的文字。<br>文本文件乱码，问题就出在编码和解码的方式不一致。比如使用utf8编码的文件，却以gb2312的方式来解码。  </p>
+<table>
+<thead>
+<tr>
+<th>文字</th>
+<th>UTF-8</th>
+<th>GB2312</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>大</td>
+<td>E5 A4 A7</td>
+<td>B4 F3</td>
+</tr>
+<tr>
+<td>一个文本文件，内容是<code>E5 A4 A7</code>,使用UTF-8的方式解码，可以得到一个<code>大</code>字，而用GB2312的方式解码，得到的是乱码。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="UTF-8和Unicode的关系"><a href="#UTF-8和Unicode的关系" class="headerlink" title="UTF-8和Unicode的关系"></a>UTF-8和Unicode的关系</h4><p>简单来说，Unicode的目标就是给世界上每一个符号都给一个独一无二的编码，而UTF-8则是为了解决这个编码如何存储在计算机中的问题。<br>UTF-8 是 Unicode 的实现方式之一。<br>UTF-8是一种多字节编码的字符集，表示一个Unicode字符时，它可以是1个至多个字节，在表示上有规律：</p>
+<table>
+<thead>
+<tr>
+<th>Unicode符号范围(十六进制)</th>
+<th>UTF-8编码方式（二进制）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000 0000-0000 007F</td>
+<td>0xxxxxxx</td>
+</tr>
+<tr>
+<td>0000 0080-0000 07FF</td>
+<td>110xxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0000 0800-0000 FFFF</td>
+<td>1110xxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0001 0000-0010 FFFF</td>
+<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+</tbody></table>
+<h4 id="手动换算理解UTF-8和Unicode"><a href="#手动换算理解UTF-8和Unicode" class="headerlink" title="手动换算理解UTF-8和Unicode"></a>手动换算理解UTF-8和Unicode</h4><ul>
+<li>用<code>大</code>字举个例子，查到<code>大</code>字的Unicode码为<code>5927</code>,在<code>0000 0800-0000 FFFF</code>之间，因此，它的UTF8编码需要占用三个字节。</li>
+<li>把<code>5927</code>转化为二进制，得到<code>101 1001 0010 0111‬</code>,填入<code>1110xxxx 10xxxxxx 10xxxxxx</code>的<code>x</code>处，不足的用0补足，最终得到<code>11100101 10100100 10100111</code>,再转为十六进制，得到<code>E5 A4 A7</code>  </li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">pocketchip</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编码</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:lrqq.github.io/2020/08/02/unicode_and_utf8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/08/02/hexo-yilia/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">yilia主题头像设置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -220,9 +382,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
