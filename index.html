@@ -162,29 +162,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>荔枝派nano传输文件可以使用<code>rz</code>,<code>sz</code>,但是由于传输使用的是串口，最大速率受限于波特率。默认的波特率是115200bps，换算过来，传输文件的速度大约为11KB/s，太慢了。如果可以通过usb线传输，速度会有极大的提高。  </p>
-<h6 id="给荔枝派nano添加USB虚拟网卡"><a href="#给荔枝派nano添加USB虚拟网卡" class="headerlink" title="给荔枝派nano添加USB虚拟网卡"></a>给荔枝派nano添加USB虚拟网卡</h6><p> 先下载某大神提供的编译包。<br> <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1N2Im1y5N3AUOen5HQcz98w">https://pan.baidu.com/s/1N2Im1y5N3AUOen5HQcz98w</a>  提取码：9m3w</p>
-<ol>
-<li>重新编译dtb<br> <code>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- dtbs -j4</code><br> 编译成功后会得到<br> <code>arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb</code>文件  </li>
-<li>编译内核<br><code>ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make -j4</code><br>编译成功后，可以获得文件 <code>arch/arm/boot/zImage</code></li>
-<li>替换文件并打包（理论上也可以直接替换FAT分区对应的两个文件）<ul>
-<li>步骤1生成的文件替换掉<code>p1/dtb_800600/tf/suniv-f1c100s-licheepi-nano.dtb</code></li>
-<li>步骤2生成的文件替换掉<code>p1/tf-zImage</code>  </li>
-<li>使用<code>pack_tf_img.sh</code>打包</li>
-</ul>
-</li>
-<li>烧录到TF卡。</li>
-</ol>
-<h5 id="测试网络连通性"><a href="#测试网络连通性" class="headerlink" title="测试网络连通性"></a>测试网络连通性</h5><ol>
-<li>使用USB转TTL将荔枝派nano连接到电脑,同时也插入USB线，然后输入<br><code>ip addr</code><br>应该可以看到一个虚拟网卡<code>usb0</code><br><code>ip link set usb0 up</code><br>开启这个网卡<br><code>ip addr add 192.168.4.111/24 dev usb0 </code><br>给这个虚拟网卡指定一个IP  </li>
-<li>在电脑上的linux系统可以看到多了一个虚拟网卡，可以用同样的办法给这个网卡指定一个IP,比如：<br><code>ip addr add 192.168.4.110/24 dev ens160u2</code>  </li>
-<li>用<code>ping</code>命令测试网络是否连通。  </li>
-</ol>
-<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
-<li>如果ping不通，看看是不是对应网卡没有打开  </li>
-<li>在windows下，<br>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengchen/p/12738608.html">https://www.cnblogs.com/chengchen/p/12738608.html</a></li>
-</ul>
-
+        <p>荔枝派nano传输文件可以使用<code>rz</code>,<code>sz</code>,但是由于传输使用的是串口，最大速率受限于波特率。默认的波特率是115200bps，换算过来，传输文件的速度大约为11KB/s，太慢了。如果可以通过usb线传输，速度会有极大的提高。</p>
+        
       
 
       
