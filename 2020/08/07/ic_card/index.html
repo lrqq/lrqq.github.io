@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="lrqq.github.io">
-  <title>IC卡破解学习记录 | blog</title>
+  <title>IC卡破解记录(一) | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文仅供研究学习交流，禁止用于违法行为。 由于我购买的pn532还没有到，手机也没有nfc功能，只能先在理论上对IC卡进行学习，有一个大概的认识。本文将记录下IC卡破解的认识，提出一些问题，并再下一篇文章进行验证。">
+  <meta name="description" content="由于我购买的pn532还没有到，手机也没有nfc功能，只能先在理论上对IC卡进行学习，有一个大概的认识。本文将记录下IC卡破解的认识，提出一些问题，并再下一篇文章进行验证。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IC卡破解学习记录">
+<meta property="og:title" content="IC卡破解记录(一)">
 <meta property="og:url" content="lrqq.github.io/2020/08/07/ic_card/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="本文仅供研究学习交流，禁止用于违法行为。 由于我购买的pn532还没有到，手机也没有nfc功能，只能先在理论上对IC卡进行学习，有一个大概的认识。本文将记录下IC卡破解的认识，提出一些问题，并再下一篇文章进行验证。">
+<meta property="og:description" content="由于我购买的pn532还没有到，手机也没有nfc功能，只能先在理论上对IC卡进行学习，有一个大概的认识。本文将记录下IC卡破解的认识，提出一些问题，并再下一篇文章进行验证。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="lrqq.github.io/2020/08/07/ic_card/ic_struct.png">
-<meta property="og:image" content="lrqq.github.io/2020/08/07/ic_card/data_block.jpg">
-<meta property="og:image" content="lrqq.github.io/2020/08/07/ic_card/control_block.jpg">
+<meta property="og:image" content="/07/ic_card/ic_struct.png">
+<meta property="og:image" content="/07/ic_card/data_block.jpg">
+<meta property="og:image" content="/07/ic_card/control_block.jpg">
 <meta property="article:published_time" content="2020-08-07T07:11:59.000Z">
-<meta property="article:modified_time" content="2020-08-08T09:05:27.258Z">
+<meta property="article:modified_time" content="2020-08-10T13:43:08.248Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="RFID">
 <meta property="article:tag" content="硬件破解">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="lrqq.github.io/2020/08/07/ic_card/ic_struct.png">
+<meta name="twitter:image" content="/07/ic_card/ic_struct.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -167,7 +167,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      IC卡破解学习记录
+      IC卡破解记录(一)
     </h1>
   
 
@@ -180,8 +180,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文仅供研究学习交流，禁止用于违法行为。</p>
-<p>由于我购买的pn532还没有到，手机也没有nfc功能，只能先在理论上对IC卡进行学习，有一个大概的认识。本文将记录下IC卡破解的认识，提出一些问题，并再下一篇文章进行验证。<a id="more"></a></p>
+        <p>由于我购买的pn532还没有到，手机也没有nfc功能，只能先在理论上对IC卡进行学习，有一个大概的认识。本文将记录下IC卡破解的认识，提出一些问题，并再下一篇文章进行验证。<a id="more"></a>  </p>
+<p>本文仅供研究学习交流，禁止用于违法行为。</p>
 <h3 id="1-判断IC卡的类型"><a href="#1-判断IC卡的类型" class="headerlink" title="1. 判断IC卡的类型"></a>1. 判断IC卡的类型</h3><p>使用相关的读卡软件读取IC卡的信息，比如mifare和RFID Tools，读取到的信息应该包括</p>
 <ul>
 <li><code>UID</code> 即卡号，出厂固化，全球唯一。</li>
@@ -193,7 +193,7 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <p>CPU卡大部分无解，CPU模拟卡的CPU区无解，不再讨论这两种卡。<br>以下均针对M1卡进行研究学习。</p>
-<h3 id="2-尝试读取M1卡的数据"><a href="#2-尝试读取M1卡的数据" class="headerlink" title="2. 尝试读取M1卡的数据"></a>2. 尝试读取M1卡的数据</h3><h5 id="2-1-M1卡的内部的数据存储结构。"><a href="#2-1-M1卡的内部的数据存储结构。" class="headerlink" title="2.1 M1卡的内部的数据存储结构。"></a>2.1 M1卡的内部的数据存储结构。</h5><p><img src="ic_struct.png"></p>
+<h3 id="2-尝试读取M1卡的数据"><a href="#2-尝试读取M1卡的数据" class="headerlink" title="2. 尝试读取M1卡的数据"></a>2. 尝试读取M1卡的数据</h3><h5 id="2-1-M1卡的内部的数据存储结构。"><a href="#2-1-M1卡的内部的数据存储结构。" class="headerlink" title="2.1 M1卡的内部的数据存储结构。"></a>2.1 M1卡的内部的数据存储结构。</h5><p><img src="/07/ic_card/ic_struct.png"></p>
 <ul>
 <li>存储结构<ul>
 <li>M1卡内部有1K存储空间，分为16个扇区（0~15），每个扇区64字节。</li>
@@ -205,10 +205,10 @@ var _hmt = _hmt || [];
 </li>
 <li>数据块（块0~块2）<ul>
 <li>存储一般的数据，可以进行读、写操作</li>
-<li>存储数值数据，有固定的存储格式<br><img src="data_block.jpg"><br><code>Value</code>表示一个带符号4字节值，为了保证数据的正确性和保密性，值被保存了3次，两次直接保存，一次取反保存。该值先保存在0字节-3字节中，然后将取反的字节保存在4字节-7字节中，还保存了一次在8字节-11字节中。<br><code>Adr</code>表示一个字节的地址，当执行备份管理时用于保存存储段的地址。地址字节保存了4次，取反和不取反各保存了2次。在执行加值、减值、恢复和传送等操作时，地址保持不变，它只能通过写命令改变。</li>
+<li>存储数值数据，有固定的存储格式<br><img src="/07/ic_card/data_block.jpg"><br><code>Value</code>表示一个带符号4字节值，为了保证数据的正确性和保密性，值被保存了3次，两次直接保存，一次取反保存。该值先保存在0字节-3字节中，然后将取反的字节保存在4字节-7字节中，还保存了一次在8字节-11字节中。<br><code>Adr</code>表示一个字节的地址，当执行备份管理时用于保存存储段的地址。地址字节保存了4次，取反和不取反各保存了2次。在执行加值、减值、恢复和传送等操作时，地址保持不变，它只能通过写命令改变。</li>
 </ul>
 </li>
-<li>控制块（块3）<br>  <img src="control_block.jpg"><ul>
+<li>控制块（块3）<br>  <img src="/07/ic_card/control_block.jpg"><ul>
 <li>每个扇区的存取权限由该扇区的<code>Access Bits</code>决定，而在<code>Access Bits</code>里指定读/写操作用到哪个密钥。</li>
 <li>也就是说，如果密钥不对，对应的那个扇区都是读不出来的。</li>
 </ul>
