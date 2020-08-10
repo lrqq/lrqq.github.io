@@ -130,6 +130,13 @@
   </url>
   
   <url>
+    <loc>lrqq.github.io/tags/linux/</loc>
+    <lastmod>2020-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>lrqq.github.io/tags/hexo/</loc>
     <lastmod>2020-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -179,13 +186,6 @@
   </url>
   
   <url>
-    <loc>lrqq.github.io/tags/linux/</loc>
-    <lastmod>2020-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>lrqq.github.io/tags/%E7%94%B5%E6%9C%BA/</loc>
     <lastmod>2020-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -193,14 +193,14 @@
   </url>
   
   <url>
-    <loc>lrqq.github.io/tags/pocketchip/</loc>
+    <loc>lrqq.github.io/tags/%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2020-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>lrqq.github.io/tags/%E7%BC%96%E7%A0%81/</loc>
+    <loc>lrqq.github.io/tags/pocketchip/</loc>
     <lastmod>2020-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
