@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://lrqq.github.io/2020/08/16/ic_card3/cards.png">
 <meta property="article:published_time" content="2020-08-16T00:57:16.000Z">
-<meta property="article:modified_time" content="2020-08-16T01:42:24.551Z">
+<meta property="article:modified_time" content="2020-08-16T01:47:31.991Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="RFID">
@@ -180,7 +180,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>在上一篇记录，我以为pn532无法使用在CPU模拟卡上，但是后来我查了资料，发现是可以的。<a id="more"></a><br>本文仅供研究学习交流，禁止用于违法行为。</p>
-<h4 id="1-检测卡"><a href="#1-检测卡" class="headerlink" title="1. 检测卡"></a>1. 检测卡</h4><p>首先我们先来看一张图<img src="/2020/08/16/ic_card3/cards.png"><br>从图中我们可以看到，mfoc，检加密，知n密，字典测试都不行，那就只剩下一个<code>hardnested</code>了。</p>
+<h4 id="1-检测卡"><a href="#1-检测卡" class="headerlink" title="1. 检测卡"></a>1. 检测卡</h4><p>首先我们先来看一张图<br><img src="/2020/08/16/ic_card3/cards.png"><br>从图中我们可以看到，mfoc，检加密，知n密，字典测试都不行，那就只剩下一个<code>hardnested</code>了。</p>
 <h4 id="2-读取卡"><a href="#2-读取卡" class="headerlink" title="2. 读取卡"></a>2. 读取卡</h4><p>从图中我们可以看到，CPU模拟卡是可以像读M1卡一样读取到其中的数据的，建议使用手机软件<code>MifareClassicTool</code>来读取，读取到数据后可以判断出改卡加密了几个扇区。</p>
 <ul>
 <li>如果一个扇区都没有加密，说明数据都在CPU区，就没必要再继续了。</li>
