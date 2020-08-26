@@ -152,6 +152,168 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux-library" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/19/linux-library/">linux编译运行的一些事</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/19/linux-library/" class="archive-article-date">
+  	<time datetime="2020-08-19T08:46:24.984Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Linux-gcc编译链接时的动态库搜索路径"><a href="#Linux-gcc编译链接时的动态库搜索路径" class="headerlink" title="Linux gcc编译链接时的动态库搜索路径"></a>Linux gcc编译链接时的动态库搜索路径</h5><p>GCC编译、链接生成可执行文件时，动态库的搜索路径就包含LIBRARY_PATH，具体的搜索路径顺序如下（注意不会递归性地在其子目录下搜索）：</p>
+<ol>
+<li>gcc编译、链接命令中的-L选项；</li>
+<li>gcc的环境变量的LIBRARY_PATH（多个路径用冒号分割）；</li>
+<li>gcc默认动态库目录：/lib:/usr/lib:usr/lib64:/usr/local/lib。</li>
+</ol>
+<h5 id="执行二进制文件时的动态库搜索路径"><a href="#执行二进制文件时的动态库搜索路径" class="headerlink" title="执行二进制文件时的动态库搜索路径"></a>执行二进制文件时的动态库搜索路径</h5><p>链接生成二进制可执行文件后，运行该程序加载动态库文件时就会搜索包含LD_LIBRARY_PATH路径下的动态库，具体顺序如下：</p>
+<ol>
+<li>编译目标代码时指定的动态库搜索路径：用选项-Wl,rpath和include指定的动态库的搜索路径，<br>比如gcc -Wl,-rpath,include -L. -ldltest hello.c，在执行文件时会搜索路径<code>./include</code>；</li>
+<li>环境变量LD_LIBRARY_PATH（多个路径用冒号分割）；</li>
+<li>在 /etc/ld.so.conf.d/ 目录下的配置文件指定的动态库绝对路径（通过ldconfig生效，一般是非root用户时使用）；</li>
+<li>gcc默认动态库目录：/lib:/usr/lib:usr/lib64:/usr/local/lib等。</li>
+</ol>
+<h4 id="一些相关命令"><a href="#一些相关命令" class="headerlink" title="一些相关命令"></a>一些相关命令</h4><ul>
+<li><p>ld<br>ld即链接器，使用gcc将源码编译成可执行文件时的最后一个步骤。</p>
+</li>
+<li><p>ld.so<br>负责so文件（即动态库文件）的管理和加载<br>动态链接器/动态加载器  运行的时候会根据指定的路径去加载指定的库。<br>而命令ld.so相应的配置文件是/etc/ld.so.conf<br>Linux做法是把私有路径加入/etc/ld.so.conf、运行ldconfig生成ld.so.cache、ld.so会去查找这个cache</p>
+</li>
+<li><p>ldd<br>list dynamic dependencies<br>列出动态库的依赖关系，也就是运行时需要加载的库</p>
+</li>
+<li><p>nm<br>查看目标文件或可执行文件的符号</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编译</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/19/linux-library/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-openvino" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/openvino/">openvino</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/18/openvino/" class="archive-article-date">
+  	<time datetime="2020-08-18T13:40:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/18/openvino/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hardnested" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -786,172 +948,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-licheepi_note1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/06/licheepi_note1/">荔枝派nano入坑笔记(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/06/licheepi_note1/" class="archive-article-date">
-  	<time datetime="2020-08-06T09:40:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>荔枝派nano传输文件可以使用<code>rz</code>,<code>sz</code>,但是由于传输使用的是串口，最大速率受限于波特率。默认的波特率是115200bps，换算过来，传输文件的速度大约为11KB/s，太慢了。如果可以通过usb线传输，速度会有极大的提高。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">licheepi</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">荔枝派nano</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/06/licheepi_note1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-motor" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/05/motor/">电机学习</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/05/motor/" class="archive-article-date">
-  	<time datetime="2020-08-05T00:43:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>电机的分类</p>
-<ul>
-<li>驱动类电机 （电风扇）</li>
-<li>控制类电机 （电机的转速，停止位置只取决于脉冲信号的频率和脉冲数）<ul>
-<li>反应式步进电机 （淘汰）</li>
-<li>永磁式步进电机 （价格低，误差相对较大）</li>
-<li>混合式步进电机  （结构复杂，价格较高）  </li>
-</ul>
-</li>
-</ul>
-<p> 参考：<a target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/mcu-tutorial-two/turning-precision-and-depth-analysis.html">https://wiki.jikexueyuan.com/project/mcu-tutorial-two/turning-precision-and-depth-analysis.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">电机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/05/motor/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
@@ -1100,6 +1096,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编译</a>
               </li>
             
             <div class="clearfix"></div>
