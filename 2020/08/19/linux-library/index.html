@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://lrqq.github.io">
   <title>linux编译运行的一些事 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Linux gcc编译链接时的动态库搜索路径GCC编译、链接生成可执行文件时，动态库的搜索路径就包含LIBRARY_PATH，具体的搜索路径顺序如下（注意不会递归性地在其子目录下搜索）：  gcc编译、链接命令中的-L选项； gcc的环境变量的LIBRARY_PATH（多个路径用冒号分割）； gcc默认动态库目录：&#x2F;lib:&#x2F;usr&#x2F;lib:usr&#x2F;lib64:&#x2F;usr&#x2F;local&#x2F;lib。  执">
+  <meta name="description" content="LIBRARY_PATH和LD_LIBRARY_PATH">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux编译运行的一些事">
 <meta property="og:url" content="https://lrqq.github.io/2020/08/19/linux-library/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="Linux gcc编译链接时的动态库搜索路径GCC编译、链接生成可执行文件时，动态库的搜索路径就包含LIBRARY_PATH，具体的搜索路径顺序如下（注意不会递归性地在其子目录下搜索）：  gcc编译、链接命令中的-L选项； gcc的环境变量的LIBRARY_PATH（多个路径用冒号分割）； gcc默认动态库目录：&#x2F;lib:&#x2F;usr&#x2F;lib:usr&#x2F;lib64:&#x2F;usr&#x2F;local&#x2F;lib。  执">
+<meta property="og:description" content="LIBRARY_PATH和LD_LIBRARY_PATH">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-19T08:46:24.984Z">
-<meta property="article:modified_time" content="2020-08-26T12:37:38.650Z">
+<meta property="article:modified_time" content="2020-08-28T08:19:54.418Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="编译">
@@ -176,7 +176,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="Linux-gcc编译链接时的动态库搜索路径"><a href="#Linux-gcc编译链接时的动态库搜索路径" class="headerlink" title="Linux gcc编译链接时的动态库搜索路径"></a>Linux gcc编译链接时的动态库搜索路径</h5><p>GCC编译、链接生成可执行文件时，动态库的搜索路径就包含LIBRARY_PATH，具体的搜索路径顺序如下（注意不会递归性地在其子目录下搜索）：</p>
+        <p>LIBRARY_PATH和LD_LIBRARY_PATH  <a id="more"></a></p>
+<h5 id="Linux-gcc编译链接时的动态库搜索路径"><a href="#Linux-gcc编译链接时的动态库搜索路径" class="headerlink" title="Linux gcc编译链接时的动态库搜索路径"></a>Linux gcc编译链接时的动态库搜索路径</h5><p>GCC编译、链接生成可执行文件时，动态库的搜索路径就包含LIBRARY_PATH，具体的搜索路径顺序如下（注意不会递归性地在其子目录下搜索）：</p>
 <ol>
 <li>gcc编译、链接命令中的-L选项；</li>
 <li>gcc的环境变量的LIBRARY_PATH（多个路径用冒号分割）；</li>
@@ -313,8 +314,8 @@ var _hmt = _hmt || [];
 <nav id="article-nav">
   
   
-    <a href="/2020/08/18/openvino/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">openvino</div>
+    <a href="/2020/08/16/hardnested/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在linux上使用hardnested</div>
       <i class="icon-circle-right"></i>
     </a>
   
