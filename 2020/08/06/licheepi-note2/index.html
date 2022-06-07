@@ -250,6 +250,18 @@ var _hmt = _hmt || [];
 <h5 id="ACM功能"><a href="#ACM功能" class="headerlink" title="ACM功能"></a>ACM功能</h5><p>当你通过USB连接到荔枝派nano，<br>在linux的<code>/dev</code>目录下会多出一个叫做<code>ttyACM0</code>的文件，<br>这时，使用<br><code>sudo minicom -b 15200 -D /dev/ttyACM0</code><br>尝试进行登录，你会发现没有任何反应。<br>这是因为我们没有在inittab中使能这个终端，只需要编辑<code>/etc/inittab</code>文件，添加一行<br><code>/dev/ttyGS0::respawn:/sbin/getty -L /dev/ttyGS0 115200 vt100</code><br>即可启用这个终端。  </p>
 
     
+    
+    
+    <div style="margin-bottom: 1em;
+    padding: 20px 30px;
+    word-break: break-all;
+    color: #4d4d4d;
+    background: #f1f3fa;
+    border-radius: 30px 30px 0;">
+    最后更新时间：
+      2020-08-06 20:34:19
+    </div>
+    
 
     
     <div class="page-reward">

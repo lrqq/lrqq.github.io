@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/waline.2fexbx5kskkk.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/struct.exj4jukufi0.webp">
 <meta property="article:published_time" content="2022-06-06T02:12:26.000Z">
-<meta property="article:modified_time" content="2022-06-07T08:53:26.000Z">
+<meta property="article:modified_time" content="2022-06-07T11:53:12.990Z">
 <meta property="article:author" content="lrqq">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">587字</span>
+      <span class="post-count">639字</span>
     </span>
   </span>
 
@@ -254,12 +254,24 @@ var _hmt = _hmt || [];
 <p>数据存储： 使用<a target="_blank" rel="noopener" href="https://vercel.com/">LeanCloud</a>提供的数据存储服务。</p>
 <p>客户端脚本：在html中引入一小段代码，不同的hexo主题的操作有所不同，我使用的是<a target="_blank" rel="noopener" href="https://github.com/JoeyBling/hexo-theme-yilia-plus">hexo-theme-yilia-plus</a>，添加办法为：<br>1.进入主题对应的根目录下，下面的路径都以此目录为基础，比如我的主题是<code>hexo-theme-yilia-plus</code>，那就是这个目录下，修改<code>_config.yml</code>文件，添加如下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Waline评论系统</span><br><span class="line">Waline:</span><br><span class="line">  # (关闭请设置为false)</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<p>2.修改<code>layout/_partial/head.ejs</code>文件，添加如下代码：</p>
+<p>2.修改<code>layout/_partial/head.ejs</code>文件，在结束标签<code>&lt;/head&gt;</code>之前添加如下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.Waline &amp;&amp; theme.Waline.enable)&#123; %&gt;</span><br><span class="line">  &lt;%# &quot;Waline评论系统&quot; %&gt;</span><br><span class="line">  &lt;script src=&quot;https://unpkg.com/@waline/client@v2/dist/waline.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;link</span><br><span class="line">    rel=&quot;stylesheet&quot;</span><br><span class="line">    href=&quot;https://unpkg.com/@waline/client@v2/dist/waline.css&quot;</span><br><span class="line">  /&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p>3.修改<code>layout/_partial/article.ejs</code>文件，添加如下代码：</p>
+<p>3.修改<code>layout/_partial/article.ejs</code>文件，在大约130多行处，可以看到<code>changyan</code>,<code>disqus</code>,<code>gitment</code>之类的字样，这些是主题里原有的评论系统，在这里找个合适的地方，添加如下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.Waline &amp;&amp; theme.Waline.enable)&#123; %&gt;</span><br><span class="line">  &lt;%# &quot;Waline评论系统&quot; %&gt;</span><br><span class="line">  &lt;div id=&quot;waline&quot; style=&quot;width: 96%;margin: 0 auto&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    Waline.init(&#123;</span><br><span class="line">      el: &#x27;#waline&#x27;,</span><br><span class="line">      serverURL: &#x27;https://your-domain.vercel.app&#x27;,</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p>因为添加后发现评论宽度没有对齐，不太好看，于是使用了行内样式加入了<code>width: 96%;margin: 0 auto</code>属性。</p>
 
+    
+    
+    
+    <div style="margin-bottom: 1em;
+    padding: 20px 30px;
+    word-break: break-all;
+    color: #4d4d4d;
+    background: #f1f3fa;
+    border-radius: 30px 30px 0;">
+    最后更新时间：
+      2022-06-07 19:53:12
+    </div>
     
 
     
