@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/waline.2fexbx5kskkk.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/struct.exj4jukufi0.webp">
 <meta property="article:published_time" content="2022-06-06T02:12:26.000Z">
-<meta property="article:modified_time" content="2022-06-07T04:34:47.754Z">
+<meta property="article:modified_time" content="2022-06-07T07:53:26.000Z">
 <meta property="article:author" content="lrqq">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">243字</span>
+      <span class="post-count">327字</span>
     </span>
   </span>
 
@@ -240,17 +240,10 @@ var _hmt = _hmt || [];
     
     <p>重拾hexo，打算给博客加个评论系统。首选免费方案，去网上找了一圈，打算使用Waline评论系统。<span id="more"></span></p>
 <p>作为一个没咋学过前端的小白，照着网上教程也还是把评论系统搭建起来了。过程中有些疑惑，刚开始很多东西都不太理解，也不太知道是在做啥，折腾了一段时间后，大致上有了一些概念。在此记录一下。</p>
-<p>首先是确定目标，我打算给我的博客添加评论系统，使用Waline，进入<a target="_blank" rel="noopener" href="https://waline.js.org/">官网</a>,把<code>介绍</code>和<code>快速上手</code>看一看。<img src="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/waline.2fexbx5kskkk.webp" alt="waline"></p>
-<p>如何部署，在<code>快速上手</code>里面已经讲的很清楚了，但是很明显是写给有经验的人看的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/struct.exj4jukufi0.webp" alt="struct"><br>从直觉上看，部署评论系统需要完成三个部分，<code>客户端</code> <code>服务器</code> <code>数据库</code></p>
-<ul>
-<li>客户端<ul>
-<li>通过在hexo的页面上嵌入脚本程序，</li>
-</ul>
-</li>
-<li>服务器</li>
-<li>数据库</li>
-</ul>
+<p>首先是确定目标，我打算给我的博客添加评论系统，使用Waline，进入<a target="_blank" rel="noopener" href="https://waline.js.org/">官网</a>,把<code>介绍</code>和<code>快速上手</code>看一看。<br><img src="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/waline.2fexbx5kskkk.webp" alt="waline"><br>如何部署，在<code>快速上手</code>里面已经讲的很清楚了，但是可能对于我这种小白来说，还需要花时间去理解。<br><img src="https://cdn.jsdelivr.net/gh/lrqq/image-folder@master/Waline/struct.exj4jukufi0.webp" alt="struct"><br>评论系统三个部分，<code>客户端脚本</code> <code>服务器部署</code> <code>数据存储</code>都是可选的，暂时先用着免费的。</p>
+<p>客户端脚本：在html中引入一小段代码，不同的hexo主题的操作有所不同，我使用的是<a target="_blank" rel="noopener" href="https://github.com/JoeyBling/hexo-theme-yilia-plus">hexo-theme-yilia-plus</a>，添加办法还在摸索中。</p>
+<p>服务器部署：使用<a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a>这个免费的网站托管平台，将Waline项目部署到这个网站上。</p>
+<p>数据存储： 使用<a target="_blank" rel="noopener" href="https://vercel.com/">LeanCloud</a>提供的数据存储服务。</p>
 
     
 
