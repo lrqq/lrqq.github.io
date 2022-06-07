@@ -57,6 +57,15 @@ var _hmt = _hmt || [];
 
 
   
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+  
+
+  
 
 </head>
 
@@ -359,7 +368,7 @@ var _hmt = _hmt || [];
   
   
     <a href="/2022/06/06/use-waline/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Waline评论系统</div>
+      <div class="article-nav-title">yilia主题使用Waline评论系统</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -384,6 +393,18 @@ var _hmt = _hmt || [];
 
 
 
+
+
+
+
+  
+  <div id="waline" style="width: 96%;margin: 0 auto"></div>
+  <script>
+    Waline.init({
+      el: '#waline',
+      serverURL: 'https://waline-blog-eta.vercel.app/',
+    });
+  </script>
 
 
 
