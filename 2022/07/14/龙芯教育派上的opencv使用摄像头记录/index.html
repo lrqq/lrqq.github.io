@@ -18,7 +18,7 @@
 <meta property="og:description" content="需要在龙芯上面使用opencv做一些图像处理，也不知道龙芯上面能不能正常驱动usb摄像头以及使用python的opencv库，这篇博文记录一下折腾经过以及心路历程。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-14T02:30:22.000Z">
-<meta property="article:modified_time" content="2022-07-14T03:35:53.886Z">
+<meta property="article:modified_time" content="2022-07-14T07:16:16.464Z">
 <meta property="article:author" content="lrqq">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="龙芯">
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.1k字</span>
+      <span class="post-count">1.2k字</span>
     </span>
   </span>
 
@@ -266,6 +266,7 @@ var _hmt = _hmt || [];
 <p>好嘛，还是不行，看来是root下缺少一些环境变量，不能运行。<br>再考虑一下luvcview的权限问题，考虑是当前用户没有权限访问<code>/dev/video0</code>文件。</p>
 <p>tips:有的摄像头接上会生成video0和video1，但只有一个可以正常读取。</p>
 <p><code>ls -l /dev/video*</code>看看，好嘛，只有root可以访问，以及<code>video</code>用户组里面的用户可以访问，那就把当前用户加入<code>video</code>用户组就行了。执行<code>sudo usermod -aG video loongson</code>,再输入<code>id</code>，你会发现，你依旧没有加入<code>video</code>用户组，<code>logout</code>再重新登录一次就行了。</p>
+<p>参考资料：<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/27953069/opencv-error-215size-width0-size-height0-in-function-imshow">https://stackoverflow.com/questions/27953069/opencv-error-215size-width0-size-height0-in-function-imshow</a><br><a target="_blank" rel="noopener" href="https://www.wake-up-neo.com/zh/python/cv2videocaptureopen%EF%BC%88%EF%BC%89%E5%A7%8B%E7%BB%88%E8%BF%94%E5%9B%9Efalse/1045510561/">https://www.wake-up-neo.com/zh/python/cv2videocaptureopen%EF%BC%88%EF%BC%89%E5%A7%8B%E7%BB%88%E8%BF%94%E5%9B%9Efalse/1045510561/</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44596345/article/details/88390562">https://blog.csdn.net/qq_44596345/article/details/88390562</a></p>
 
     
     
@@ -277,7 +278,7 @@ var _hmt = _hmt || [];
     background: #f1f3fa;
     border-radius: 30px 30px 0;">
     最后更新时间：
-      2022-07-14 11:35:53
+      2022-07-14 15:16:16
     </div>
     
 
