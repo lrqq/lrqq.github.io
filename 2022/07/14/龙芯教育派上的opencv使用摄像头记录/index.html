@@ -6,16 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lrqq.github.io">
-  <title>Tag: 老毛子 | blog</title>
+  <title>龙芯教育派上的opencv使用摄像头记录 | blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="https://lrqq.github.io/tags/%E8%80%81%E6%AF%9B%E5%AD%90/index.html">
+  <meta name="description" content="需要在龙芯上面使用opencv做一些图像处理，也不知道龙芯上面能不能正常驱动usb摄像头以及使用python的opencv库，这篇博文记录一下折腾经过以及心路历程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="龙芯教育派上的opencv使用摄像头记录">
+<meta property="og:url" content="https://lrqq.github.io/2022/07/14/%E9%BE%99%E8%8A%AF%E6%95%99%E8%82%B2%E6%B4%BE%E4%B8%8A%E7%9A%84opencv%E4%BD%BF%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="blog">
+<meta property="og:description" content="需要在龙芯上面使用opencv做一些图像处理，也不知道龙芯上面能不能正常驱动usb摄像头以及使用python的opencv库，这篇博文记录一下折腾经过以及心路历程。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-14T02:30:22.000Z">
+<meta property="article:modified_time" content="2022-07-14T03:35:53.886Z">
 <meta property="article:author" content="lrqq">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="龙芯">
+<meta property="article:tag" content="opencv">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="blog" type="application/atom+xml">
@@ -191,69 +199,259 @@ var _hmt = _hmt || [];
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-龙芯教育派上的opencv使用摄像头记录" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/07/12/%E8%80%81%E6%AF%9B%E5%AD%90%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
-        <time datetime="2022-07-12T05:32:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/07/12/%E8%80%81%E6%AF%9B%E5%AD%90%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">老毛子使用crontab定时任务</a>
-	
+    <h1 class="article-title" itemprop="name">
+      龙芯教育派上的opencv使用摄像头记录
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+<a href="/2022/07/14/%E9%BE%99%E8%8A%AF%E6%95%99%E8%82%B2%E6%B4%BE%E4%B8%8A%E7%9A%84opencv%E4%BD%BF%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+        <time datetime="2022-07-14T02:30:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>需要在龙芯上面使用opencv做一些图像处理，也不知道龙芯上面能不能正常驱动usb摄像头以及使用python的opencv库，这篇博文记录一下折腾经过以及心路历程。<span id="more"></span></p>
+<p>最直接的想法是，如果要能正常使用，首先驱动要正常，其次，在python上的opencv库要装好，这样应该就行了。</p>
+<p>先测试驱动，接上usb摄像头，输入<code>dmesg</code>查看内核日志，发现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[ 1218.094299] usb 1-3: USB disconnect, device number 2</span><br><span class="line">[ 1221.922222] usb 1-3: new high-speed USB device number 3 using ehci-pci</span><br><span class="line">[ 1222.217930] usb 1-3: New USB device found, idVendor=046d, idProduct=0802, bcdDevice= 0.09</span><br><span class="line">[ 1222.217945] usb 1-3: New USB device strings: Mfr=0, Product=0, SerialNumber=2</span><br><span class="line">[ 1222.217953] usb 1-3: SerialNumber: B4DBC390</span><br><span class="line">[ 1222.223070] uvcvideo: Found UVC 1.00 device &lt;unnamed&gt; (046d:0802)</span><br><span class="line">[ 1222.287982] uvcvideo 1-3:1.0: Entity type for entity Extension 4 was not initialized!</span><br><span class="line">[ 1222.288000] uvcvideo 1-3:1.0: Entity type for entity Extension 8 was not initialized!</span><br><span class="line">[ 1222.288009] uvcvideo 1-3:1.0: Entity type for entity Extension 10 was not initialized!</span><br><span class="line">[ 1222.288017] uvcvideo 1-3:1.0: Entity type for entity Extension 12 was not initialized!</span><br><span class="line">[ 1222.288025] uvcvideo 1-3:1.0: Entity type for entity Extension 11 was not initialized!</span><br><span class="line">[ 1222.288033] uvcvideo 1-3:1.0: Entity type for entity Processing 2 was not initialized!</span><br><span class="line">[ 1222.288040] uvcvideo 1-3:1.0: Entity type for entity Extension 13 was not initialized!</span><br><span class="line">[ 1222.288048] uvcvideo 1-3:1.0: Entity type for entity Camera 1 was not initialized!</span><br><span class="line">[ 1222.288055] uvcvideo 1-3:1.0: Entity type for entity Extension 14 was not initialized!</span><br><span class="line">[ 1222.288408] input: UVC Camera (046d:0802) as /devices/platform/bus@10000000/1a000000.pci/pci0000:00/0000:00:04.1/usb1/1-3/1-3:1.0/input/input1</span><br><span class="line">[ 1222.557299] usb 1-3: Warning! Unlikely big volume range (=6144), cval-&gt;res is probably wrong.</span><br><span class="line">[ 1222.557314] usb 1-3: [5] FU [Mic Capture Volume] ch = 1, val = 1536/7680/1</span><br></pre></td></tr></table></figure>
+<p>也不知道有没有正常驱动，看这句<code>Warning! Unlikely big volume range (=6144), cval-&gt;res is probably wrong.</code>有个警告，好像是有点问题？搜了一下，也没咋搞明白，不过用<code>lsmod</code>看了一下啊，uvc相关驱动也加载了，<code>/dev/video0和/dev/video1</code>设备文件也有了，应该是可以用的吧？</p>
+<p>然后就是python相关的opencv包，<code>apt install python3-opencv</code>，装好了，版本是<code>3.2.0+dfsg-6</code>。</p>
+<p>紧接着，去搜个python版本opencv的demo代码，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"># openCV自带函数创建摄像头对象，0表示第一个摄像头</span><br><span class="line">cap = cv2.VideoCapture(0)</span><br><span class="line">while(1):</span><br><span class="line">    # get a frame</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    # show a frame</span><br><span class="line">    cv2.imshow(&quot;frame&quot;, frame)</span><br><span class="line">    if cv2.waitKey(1) &amp; 0xFF == ord(&#x27;q&#x27;):</span><br><span class="line">        break</span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行，果不其然，报错了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">OpenCV Error: Assertion failed (size.width&gt;0 &amp;&amp; size.height&gt;0) in imshow, file /build/opencv-WUBzAs/opencv-3.2.0+dfsg/modules/highgui/src/window.cpp, line 304</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;demo.py&quot;, line 12, in &lt;module&gt;</span><br><span class="line">    cv2.imshow(&quot;frame&quot;, frame)</span><br><span class="line">cv2.error: /build/opencv-WUBzAs/opencv-3.2.0+dfsg/modules/highgui/src/window.cpp:304: error: (-215) size.width&gt;0 &amp;&amp; size.height&gt;0 in function imshow</span><br></pre></td></tr></table></figure>
+
+<p>刚开始怀疑是版本问题，报错信息拿去搜，网上说确定不是版本问题，有说改<code>cv2.VideoCapture(0)</code>括号里面的数字为1或者-1的，有说打开的图片或者视频路径不对的<del>我这本来就不是打开图片或者视频，哪来路径一说</del>，有说需要打开摄像头后延迟一段时间再读取的，有说重新加载驱动的，试过了都没用。</p>
+<p>首先，摄像头肯定是好的，我尝试用cheese(linux下的一个相机软件)打开摄像头，提示找不到设备，但是用<code>v4l2-ctl</code>程序是可以读取到摄像头的一些分辨率之类的信息，那按理来说应该是可以用的啊，我在一篇csdn里面看到有说cheese读不出来的话用<code>luvcview</code>就行，但是龙芯软件仓库没有，好嘛，源码编译一个，去github找一下源码，装好依赖，就一个SDL2库就行。一运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">luvcview version 0.2.1</span><br><span class="line">Video driver: opengl</span><br><span class="line">Hardware acceleration available</span><br><span class="line">video /dev/video0</span><br><span class="line">ERROR opening V4L interface</span><br><span class="line">: Permission denied</span><br></pre></td></tr></table></figure>
+<p>权限不够？加个sudo看看，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">luvcview version 0.2.1</span><br><span class="line">MoTTY X11 proxy: Unsupported authorisation protocol</span><br><span class="line">error: XDG_RUNTIME_DIR not set in the environment.</span><br><span class="line">Couldn&#x27;t initialize SDL: No available video device</span><br></pre></td></tr></table></figure>
+<p>好嘛，还是不行，看来是root下缺少一些环境变量，不能运行。<br>再考虑一下luvcview的权限问题，考虑是当前用户没有权限访问<code>/dev/video0</code>文件。</p>
+<p>tips:有的摄像头接上会生成video0和video1，但只有一个可以正常读取。</p>
+<p><code>ls -l /dev/video*</code>看看，好嘛，只有root可以访问，以及<code>video</code>用户组里面的用户可以访问，那就把当前用户加入<code>video</code>用户组就行了。执行<code>sudo usermod -aG video loongson</code>,再输入<code>id</code>，你会发现，你依旧没有加入<code>video</code>用户组，<code>logout</code>再重新登录一次就行了。</p>
+
+    
+    
+    
+    <div style="margin-bottom: 1em;
+    padding: 20px 30px;
+    word-break: break-all;
+    color: #4d4d4d;
+    background: #f1f3fa;
+    border-radius: 30px 30px 0;">
+    最后更新时间：
+      2022-07-14 11:35:53
+    </div>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/wechat.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">斐讯k2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">老毛子</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">龙芯</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+           <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> 
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lrqq.github.io/2022/07/14/%E9%BE%99%E8%8A%AF%E6%95%99%E8%82%B2%E6%B4%BE%E4%B8%8A%E7%9A%84opencv%E4%BD%BF%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E8%AE%B0%E5%BD%95/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/07/12/%E8%80%81%E6%AF%9B%E5%AD%90%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">老毛子使用crontab定时任务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+  
+  <div id="waline" style="width: 96%;margin: 0 auto"></div>
+  <script>
+    Waline.init({
+      el: '#waline',
+      serverURL: 'https://waline-blog-eta.vercel.app/',
+    });
+  </script>
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -282,9 +480,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
